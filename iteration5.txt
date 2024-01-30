@@ -1,0 +1,312 @@
+unet 3 layer weight 300 augmented reduce
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True,
+            batch_norm=True,
+            up_mode='upconv', 
+        )
+epoch 10:
+2023-11-08 02:10:27,567 INFO     pid:9708 __main__:411:logMetrics E10 val      0.8783 loss, 0.0562 precision, 0.4551 recall, 0.1000 f1 score
+2023-11-08 02:10:27,567 INFO     pid:9708 __main__:421:logMetrics E10 val_all  0.8783 loss,  45.5% tp,  54.5% fn,     764.5% fp
+2023-11-08 02:10:27,645 INFO     pid:9708 __main__:474:saveModel Saved model params to models\udet\seg_2023-11-08_00.54.51_final-cls.46600.state
+2023-11-08 02:10:27,676 INFO     pid:9708 __main__:486:saveModel SHA1: 1fabb06c83f9ae9e4c43e2633c44fac95c32a523
+epoch 20:
+2023-11-08 03:11:29,093 INFO     pid:9708 __main__:411:logMetrics E20 val      0.8529 loss, 0.0361 precision, 0.7077 recall, 0.0687 f1 score
+2023-11-08 03:11:29,093 INFO     pid:9708 __main__:421:logMetrics E20 val_all  0.8529 loss,  70.8% tp,  29.2% fn,    1890.4% fp
+2023-11-08 03:11:29,171 INFO     pid:9708 __main__:474:saveModel Saved model params to models\udet\seg_2023-11-08_00.54.51_final-cls.93200.state
+2023-11-08 03:11:29,202 INFO     pid:9708 __main__:483:saveModel Saved model params to models\udet\seg_2023-11-08_00.54.51_final-cls.best.state
+2023-11-08 03:11:29,218 INFO     pid:9708 __main__:486:saveModel SHA1: 5085e4cf98b827560fb89a960362d4b35976a486
+epoch 90(best epoch)
+2023-11-08 10:04:18,411 INFO     pid:9708 __main__:411:logMetrics E90 val      0.8694 loss, 0.1208 precision, 0.4951 recall, 0.1943 f1 score
+2023-11-08 10:04:18,411 INFO     pid:9708 __main__:421:logMetrics E90 val_all  0.8694 loss,  49.5% tp,  50.5% fn,     360.2% fp
+2023-11-08 10:04:18,489 INFO     pid:9708 __main__:474:saveModel Saved model params to models\udet\seg_2023-11-08_00.54.51_final-cls.419400.state
+2023-11-08 10:04:18,520 INFO     pid:9708 __main__:486:saveModel SHA1: 98db34d0200476dd2b1abc403af6d17e444c04ed
+
+
+unet 3 layer weight 300 augmented reduce weight 600 learning rate 0.0001
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True,
+            batch_norm=True,
+            up_mode='upconv', 
+        )
+epoch 100:
+2023-11-09 04:15:37,499 INFO     pid:27368 __main__:411:logMetrics E100 val      1.0808 loss, 0.1581 precision, 0.3516 recall, 0.2182 f1 score
+2023-11-09 04:15:37,499 INFO     pid:27368 __main__:421:logMetrics E100 val_all  1.0808 loss,  35.2% tp,  64.8% fn,     187.2% fp
+2023-11-09 04:15:37,593 INFO     pid:27368 __main__:474:saveModel Saved model params to models\udet\seg_2023-11-08_18.09.32_final-cls.466000.state
+2023-11-09 04:15:37,640 INFO     pid:27368 __main__:486:saveModel SHA1: 8fc993b8eae17d527e6585f15fcbaa87916d0702
+
+
+unet 3 layer weight 300 augmented reduce weight 50 learning rate 0.0001
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True,
+            batch_norm=True,
+            up_mode='upconv', 
+        )
+best epoch 30:
+2023-11-09 20:33:38,108 INFO     pid:10652 __main__:381:logMetrics E30 SegmentationTrainingApp
+2023-11-09 20:33:38,124 INFO     pid:10652 __main__:411:logMetrics E30 val      0.7245 loss, 0.3848 precision, 0.3785 recall, 0.3816 f1 score
+2023-11-09 20:33:38,124 INFO     pid:10652 __main__:421:logMetrics E30 val_all  0.7245 loss,  37.8% tp,  62.2% fn,      60.5% fp
+2023-11-09 20:33:38,171 INFO     pid:10652 __main__:474:saveModel Saved model params to models\udet\seg_2023-11-09_17.26.05_final-cls.139800.state
+2023-11-09 20:33:38,202 INFO     pid:10652 __main__:486:saveModel SHA1: 0824efc3816a3e1223b60b141d4f534c4574fde8
+epoch 70:
+2023-11-10 00:21:02,783 INFO     pid:10652 __main__:381:logMetrics E70 SegmentationTrainingApp
+2023-11-10 00:21:02,790 INFO     pid:10652 __main__:411:logMetrics E70 val      0.7275 loss, 0.1226 precision, 0.2909 recall, 0.1725 f1 score
+2023-11-10 00:21:02,791 INFO     pid:10652 __main__:421:logMetrics E70 val_all  0.7275 loss,  29.1% tp,  70.9% fn,     208.2% fp
+2023-11-10 00:21:02,876 INFO     pid:10652 __main__:474:saveModel Saved model params to models\udet\seg_2023-11-09_17.26.05_final-cls.326200.state
+2023-11-10 00:21:02,918 INFO     pid:10652 __main__:486:saveModel SHA1: fa7d64b49916a354eb83060e31cf65960cc4cc99
+
+
+unet 3 layer weight 300 augmented reduce weight 30 learning rate 0.0001
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True,
+            batch_norm=True,
+            up_mode='upconv', 
+        )
+training best epoch 99:
+2023-11-10 10:06:29,989 INFO     pid:4280 __main__:381:logMetrics E99 SegmentationTrainingApp
+2023-11-10 10:06:29,989 INFO     pid:4280 __main__:411:logMetrics E99 trn      0.7121 loss, 0.5077 precision, 0.6698 recall, 0.5776 f1 score
+2023-11-10 10:06:29,989 INFO     pid:4280 __main__:421:logMetrics E99 trn_all  0.7121 loss,  67.0% tp,  33.0% fn,      64.9% fp
+best epoch 20:
+2023-11-10 02:54:17,236 INFO     pid:4280 __main__:381:logMetrics E20 SegmentationTrainingApp
+2023-11-10 02:54:17,252 INFO     pid:4280 __main__:411:logMetrics E20 val      0.7125 loss, 0.5240 precision, 0.3067 recall, 0.3869 f1 score
+2023-11-10 02:54:17,252 INFO     pid:4280 __main__:421:logMetrics E20 val_all  0.7125 loss,  30.7% tp,  69.3% fn,      27.9% fp
+2023-11-10 02:54:17,314 INFO     pid:4280 __main__:474:saveModel Saved model params to models\udet\seg_2023-11-10_00.46.26_final-cls.93200.state
+2023-11-10 02:54:17,361 INFO     pid:4280 __main__:483:saveModel Saved model params to models\udet\seg_2023-11-10_00.46.26_final-cls.best.state
+2023-11-10 02:54:17,377 INFO     pid:4280 __main__:486:saveModel SHA1: 52b1fb617732d639c2567d805d43d3e8f4aff16f
+epoch 100:
+023-11-10 10:22:56,163 INFO     pid:4280 __main__:381:logMetrics E100 SegmentationTrainingApp
+2023-11-10 10:22:56,163 INFO     pid:4280 __main__:411:logMetrics E100 val      0.7138 loss, 0.5698 precision, 0.2052 recall, 0.3018 f1 score
+2023-11-10 10:22:56,163 INFO     pid:4280 __main__:421:logMetrics E100 val_all  0.7138 loss,  20.5% tp,  79.5% fn,      15.5% fp
+2023-11-10 10:22:56,225 INFO     pid:4280 __main__:474:saveModel Saved model params to models\udet\seg_2023-11-10_00.46.26_final-cls.466000.state
+2023-11-10 10:22:56,257 INFO     pid:4280 __main__:486:saveModel SHA1: f8fb45ea51a5b0da5d6858cb932c5397bbba9a77
+unet 3 layer weight 300 augmented reduce weight 30 learning rate 0.0001
+noise 50 random seed 42
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True,
+            batch_norm=True,
+            up_mode='upconv', 
+        )
+best epoch 20:
+2023-11-10 15:56:45,750 INFO     pid:21400 __main__:382:logMetrics E25 SegmentationTrainingApp
+2023-11-10 15:56:45,750 INFO     pid:21400 __main__:412:logMetrics E25 val      0.7133 loss, 0.5191 precision, 0.2483 recall, 0.3359 f1 score
+2023-11-10 15:56:45,750 INFO     pid:21400 __main__:422:logMetrics E25 val_all  0.7133 loss,  24.8% tp,  75.2% fn,      23.0% fp
+2023-11-10 15:56:45,818 INFO     pid:21400 __main__:475:saveModel Saved model params to models\udet\seg_2023-11-10_13.19.04_final-cls.116500.state
+2023-11-10 15:56:45,849 INFO     pid:21400 __main__:487:saveModel SHA1: 14501178ee9eed4f468ed1b07bd1399b11bc191a
+epoch 30:
+2023-11-10 16:25:37,139 INFO     pid:21400 __main__:382:logMetrics E30 SegmentationTrainingApp
+2023-11-10 16:25:37,154 INFO     pid:21400 __main__:412:logMetrics E30 val      0.7137 loss, 0.5366 precision, 0.2156 recall, 0.3076 f1 score
+2023-11-10 16:25:37,154 INFO     pid:21400 __main__:422:logMetrics E30 val_all  0.7137 loss,  21.6% tp,  78.4% fn,      18.6% fp
+2023-11-10 16:25:37,216 INFO     pid:21400 __main__:475:saveModel Saved model params to models\udet\seg_2023-11-10_13.19.04_final-cls.139800.state
+2023-11-10 16:25:37,260 INFO     pid:21400 __main__:487:saveModel SHA1: bed8b2ffab54d3c7eef307e9f91789679a9f166b
+best train epoch 29:
+2023-11-10 16:08:17,156 INFO     pid:21400 __main__:382:logMetrics E29 SegmentationTrainingApp
+2023-11-10 16:08:17,165 INFO     pid:21400 __main__:412:logMetrics E29 trn      0.7131 loss, 0.4091 precision, 0.6107 recall, 0.4900 f1 score
+2023-11-10 16:08:17,165 INFO     pid:21400 __main__:422:logMetrics E29 trn_all  0.7131 loss,  61.1% tp,  38.9% fn,      88.2% fp
+unet 3 layer weight 300 augmented reduce weight 30 learning rate 0.0001
+noise 25 random seed 42 batch size 8
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True,
+            batch_norm=True,
+            up_mode='upconv', 
+        )
+best epoch 20:
+2023-11-10 23:59:37,634 INFO     pid:21644 __main__:382:logMetrics E20 SegmentationTrainingApp
+2023-11-10 23:59:37,639 INFO     pid:21644 __main__:412:logMetrics E20 val      0.7111 loss, 0.3523 precision, 0.4426 recall, 0.3923 f1 score
+2023-11-10 23:59:37,639 INFO     pid:21644 __main__:422:logMetrics E20 val_all  0.7111 loss,  44.3% tp,  55.7% fn,      81.4% fp
+2023-11-10 23:59:37,691 INFO     pid:21644 __main__:475:saveModel Saved model params to models\udet\seg_2023-11-10_22.44.15_final-cls.93200.state
+2023-11-10 23:59:37,729 INFO     pid:21644 __main__:484:saveModel Saved model params to models\udet\seg_2023-11-10_22.44.15_final-cls.best.state
+2023-11-10 23:59:37,744 INFO     pid:21644 __main__:487:saveModel SHA1: 9b63e7c7e9823371b2c4c2f2fc619d07f344529f 
+
+unet 3 layer weight 300 augmented reduce weight 25 learning rate 0.0001
+noise 25 random seed 42 batch size 8
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True,
+            batch_norm=True,
+            up_mode='upconv', 
+        )
+best epoch 45:
+2023-11-11 11:43:47,788 INFO     pid:8424 __main__:382:logMetrics E45 SegmentationTrainingApp
+2023-11-11 11:43:47,788 INFO     pid:8424 __main__:412:logMetrics E45 val      0.7081 loss, 0.4901 precision, 0.4161 recall, 0.4501 f1 score
+2023-11-11 11:43:47,788 INFO     pid:8424 __main__:422:logMetrics E45 val_all  0.7081 loss,  41.6% tp,  58.4% fn,      43.3% fp
+2023-11-11 11:43:47,882 INFO     pid:8424 __main__:475:saveModel Saved model params to models\udet\seg_2023-11-11_08.44.57_final-cls.209700.state
+2023-11-11 11:43:47,913 INFO     pid:8424 __main__:487:saveModel SHA1: 82417e1393bc99aca19c60a9cac16303ecca89d2
+
+unet 3 layer weight 300 augmented reduce weight 20 learning rate 0.0001
+noise 25 random seed 42 batch size 8
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True,
+            batch_norm=True,
+            up_mode='upconv', 
+        )
+best epoch 35:
+2023-11-11 16:42:41,202 INFO     pid:15964 __main__:382:logMetrics E35 SegmentationTrainingApp
+2023-11-11 16:42:41,218 INFO     pid:15964 __main__:412:logMetrics E35 val      0.7047 loss, 0.4539 precision, 0.4624 recall, 0.4581 f1 score
+2023-11-11 16:42:41,218 INFO     pid:15964 __main__:422:logMetrics E35 val_all  0.7047 loss,  46.2% tp,  53.8% fn,      55.6% fp
+2023-11-11 16:42:41,296 INFO     pid:15964 __main__:475:saveModel Saved model params to models\udet\seg_2023-11-11_14.20.50_final-cls.163100.state
+2023-11-11 16:42:41,327 INFO     pid:15964 __main__:484:saveModel Saved model params to models\udet\seg_2023-11-11_14.20.50_final-cls.best.state
+2023-11-11 16:42:41,343 INFO     pid:15964 __main__:487:saveModel SHA1: ed05d31a1ac77d1c1a4a04be82942778966af63a
+epoch 55:
+2023-11-11 18:03:19,807 INFO     pid:15964 __main__:382:logMetrics E55 SegmentationTrainingApp
+2023-11-11 18:03:19,816 INFO     pid:15964 __main__:412:logMetrics E55 val      0.7054 loss, 0.5747 precision, 0.3607 recall, 0.4432 f1 score
+2023-11-11 18:03:19,817 INFO     pid:15964 __main__:422:logMetrics E55 val_all  0.7054 loss,  36.1% tp,  63.9% fn,      26.7% fp
+
+unet 3 layer weight 300 augmented reduce weight 16 learning rate 0.0001
+noise 25 random seed 42 batch size 8
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True,
+            batch_norm=True,
+            up_mode='upconv', 
+        )
+best epoch 35:
+2023-11-11 21:45:58,892 INFO     pid:6960 __main__:382:logMetrics E35 SegmentationTrainingApp
+2023-11-11 21:45:58,901 INFO     pid:6960 __main__:412:logMetrics E35 val      0.7024 loss, 0.5220 precision, 0.4358 recall, 0.4750 f1 score
+2023-11-11 21:45:58,902 INFO     pid:6960 __main__:422:logMetrics E35 val_all  0.7024 loss,  43.6% tp,  56.4% fn,      39.9% fp
+2023-11-11 21:45:58,982 INFO     pid:6960 __main__:475:saveModel Saved model params to models\udet\seg_2023-11-11_19.22.59_final-cls.163100.state
+2023-11-11 21:45:59,003 INFO     pid:6960 __main__:484:saveModel Saved model params to models\udet\seg_2023-11-11_19.22.59_final-cls.best.state
+2023-11-11 21:45:59,016 INFO     pid:6960 __main__:487:saveModel SHA1: 0a45c56fbe49f9665a4ce445957b36668804b457
+
+unet 3 layer weight 300 augmented reduce weight 16 learning rate 0.0001
+noise 25 random seed 42 batch size 8 lose function diceloss
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True,
+            batch_norm=True,
+            up_mode='upconv', 
+        )
+best epoch 75:
+2023-11-12 06:49:59,465 INFO     pid:9004 __main__:418:logMetrics E75 val      1363.1228 loss, 0.7780 precision, 0.2535 recall, 0.3824 f1 score
+2023-11-12 06:49:59,465 INFO     pid:9004 __main__:428:logMetrics E75 val_all  1363.1228 loss,  25.3% tp,  74.7% fn,       7.2% fp
+2023-11-12 06:49:59,528 INFO     pid:9004 __main__:481:saveModel Saved model params to models\udet\seg_2023-11-12_01.53.28_final-cls.349500.state
+2023-11-12 06:49:59,590 INFO     pid:9004 __main__:490:saveModel Saved model params to models\udet\seg_2023-11-12_01.53.28_final-cls.best.state
+2023-11-12 06:49:59,606 INFO     pid:9004 __main__:493:saveModel SHA1: 0b30b28a692aa65a80409d0b0d0f2d248152f7fa
+epoch 125:
+2023-11-12 10:03:47,102 INFO     pid:9004 __main__:388:logMetrics E125 SegmentationTrainingApp
+2023-11-12 10:03:47,117 INFO     pid:9004 __main__:418:logMetrics E125 val      1363.6080 loss, 0.8180 precision, 0.2372 recall, 0.3677 f1 score
+2023-11-12 10:03:47,124 INFO     pid:9004 __main__:428:logMetrics E125 val_all  1363.6080 loss,  23.7% tp,  76.3% fn,       5.3% fp
+2023-11-12 10:03:47,221 INFO     pid:9004 __main__:481:saveModel Saved model params to models\udet\seg_2023-11-12_01.53.28_final-cls.582500.state
+2023-11-12 10:03:47,358 INFO     pid:9004 __main__:493:saveModel SHA1: d9daadbfb7db9d117ad01e3fe785844e5c9f4231
+epoch 120:
+2023-11-12 09:43:19,593 INFO     pid:9004 __main__:388:logMetrics E120 SegmentationTrainingApp
+2023-11-12 09:43:19,593 INFO     pid:9004 __main__:418:logMetrics E120 val      1363.2401 loss, 0.8802 precision, 0.2006 recall, 0.3268 f1 score
+2023-11-12 09:43:19,609 INFO     pid:9004 __main__:428:logMetrics E120 val_all  1363.2401 loss,  20.1% tp,  79.9% fn,       2.7% fp
+2023-11-12 09:43:19,672 INFO     pid:9004 __main__:481:saveModel Saved model params to models\udet\seg_2023-11-12_01.53.28_final-cls.559200.state
+2023-11-12 09:43:19,797 INFO     pid:9004 __main__:493:saveModel SHA1: e74919a625c600b429153ccd020696200dde3ba4
+
+2023-11-13 08:21:28,598 INFO     pid:9104 __main__:402:logMetrics E80 SegmentationTrainingApp
+2023-11-13 08:21:28,598 INFO     pid:9104 __main__:437:logMetrics E80 val      2858.5393 loss, 188.0620 fnloss, 500.0331 fploss, 0.6760 precision, 0.3481 recall, 0.4596 f1 score
+2023-11-13 08:21:28,598 INFO     pid:9104 __main__:451:logMetrics E80 val_all  2858.5393 loss,  34.8% tp,  65.2% fn,      16.7% fp
+2023-11-13 08:21:28,718 INFO     pid:9104 __main__:504:saveModel Saved model params to models\udet\seg_2023-11-13_03.01.10_final-cls.372800.state
+2023-11-13 08:21:28,777 INFO     pid:9104 __main__:513:saveModel Saved model params to models\udet\seg_2023-11-13_03.01.10_final-cls.best.state
+2023-11-13 08:21:28,794 INFO     pid:9104 __main__:516:saveModel SHA1: 1453320d02fdba5fcf11b1e3b149384b441f93cd
+
+
+unet 3 layer weight 300 augmented reduce weight 1000 learning rate 0.0001
+noise 25 random seed 42 batch size 8 lose function diceloss
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True, #padding so that we get the output size as input size
+            batch_norm=True,
+            up_mode='upconv', #use  nn.ConvTranspose2d
+        )
+2023-11-13 13:01:03,637 INFO     pid:24560 __main__:437:logMetrics E70 val      2495.0242 loss, 152.9728 fnloss, 500.1200 fploss, 0.5826 precision, 0.4153 recall, 0.4849 f1 score
+2023-11-13 13:01:03,637 INFO     pid:24560 __main__:451:logMetrics E70 val_all  2495.0242 loss,  41.5% tp,  58.5% fn,      29.8% fp
+2023-11-13 13:01:03,762 INFO     pid:24560 __main__:504:saveModel Saved model params to models\udet\seg_2023-11-13_08.23.57_final-cls.326200.state
+2023-11-13 13:01:03,824 INFO     pid:24560 __main__:513:saveModel Saved model params to models\udet\seg_2023-11-13_08.23.57_final-cls.best.state
+
+unet 5 layer weight 300 augmented reduce weight 1000 learning rate 0.0001
+noise 25 random seed 42 batch size 8 lose function diceloss
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=5,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True, #padding so that we get the output size as input size
+            batch_norm=True,
+            up_mode='upconv', #use  nn.ConvTranspose2d
+        )
+2023-11-14 07:28:17,703 INFO     pid:22972 __main__:404:logMetrics E120 SegmentationTrainingApp
+2023-11-14 07:28:17,703 INFO     pid:22972 __main__:439:logMetrics E120 val      4259.5991 loss, 237.6937 fnloss, 499.9145 fploss, 0.7251 precision, 0.3391 recall, 0.4621 f1 score
+2023-11-14 07:28:17,703 INFO     pid:22972 __main__:453:logMetrics E120 val_all  4259.5991 loss,  33.9% tp,  66.1% fn,      12.9% fp
+2023-11-14 07:28:18,015 INFO     pid:22972 __main__:506:saveModel Saved model params to models\udet\seg_2023-11-13_22.16.05_final-cls.559200.state
+2023-11-14 07:28:18,218 INFO     pid:22972 __main__:515:saveModel Saved model params to models\udet\seg_2023-11-13_22.16.05_final-cls.best.state
+2023-11-14 09:38:44,329 INFO     pid:22972 __main__:404:logMetrics E150 SegmentationTrainingApp
+2023-11-14 09:38:44,330 INFO     pid:22972 __main__:439:logMetrics E150 trn      4145.0532 loss, 106.8251 fnloss, 500.2254 fploss, 0.8141 precision, 0.4133 recall, 0.5482 f1 score
+2023-11-14 09:38:44,330 INFO     pid:22972 __main__:453:logMetrics E150 trn_all  4145.0532 loss,  41.3% tp,  58.7% fn,       9.4% fp
+
+unet 5 layer weight 300 augmented reduce weight 50 learning rate 0.0001
+noise 25 random seed 42 batch size 8 lose function BCEloss
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=5,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True, #padding so that we get the output size as input size
+            batch_norm=True,
+            up_mode='upconv', #use  nn.ConvTranspose2d
+        )
+2023-11-15 08:28:59,139 INFO     pid:9984 __main__:407:logMetrics E100 SegmentationTrainingApp
+2023-11-15 08:28:59,155 INFO     pid:9984 __main__:442:logMetrics E100 val      0.7505 loss, 0.7493 fnloss, 0.2444 precision, 0.5264 recall, 0.3339 f1 score
+2023-11-15 08:28:59,155 INFO     pid:9984 __main__:456:logMetrics E100 val_all  0.7505 loss,  52.6% tp,  47.4% fn,     162.7% fp
+2023-11-15 08:28:59,499 INFO     pid:9984 __main__:509:saveModel Saved model params to models\udet\seg_2023-11-15_00.45.20_final-cls.466000.state
+2023-11-15 08:28:59,718 INFO     pid:9984 __main__:521:saveModel SHA1: 8b12d68782d3c1ed0e52cc06cf46b6ae84185939
+
+
+unet 5 layer weight 300 augmented reduce weight 50 learning rate 0.0001
+noise 25 random seed 42 batch size 8 lose function BCEloss origin-concour
+segmentation_model = UDetWrapper(
+            in_channels=7,
+            n_classes=1,
+            depth=3,  #how deep the U go
+            wf=6,   #2^4 filter
+            padding=True, #padding so that we get the output size as input size
+            batch_norm=True,
+            up_mode='upconv', #use  nn.ConvTranspose2d
+        )
+lowest fn epoch 55:
+2023-11-17 20:22:35,269 INFO     pid:26908 __main__:407:logMetrics E55 SegmentationTrainingApp
+2023-11-17 20:22:35,273 INFO     pid:26908 __main__:442:logMetrics E55 val      0.7200 loss, 0.7194 fnloss, 0.3708 precision, 0.8185 recall, 0.5103 f1 score
+2023-11-17 20:22:35,274 INFO     pid:26908 __main__:456:logMetrics E55 val_all  0.7200 loss,  81.9% tp,  18.1% fn,     138.9% fp
+2023-11-17 20:22:35,318 INFO     pid:26908 __main__:509:saveModel Saved model params to models\udet\seg_2023-11-17_17.29.33_final-cls.256025.state
+2023-11-17 20:22:35,333 INFO     pid:26908 __main__:518:saveModel Saved model params to models\udet\seg_2023-11-17_17.29.33_final-cls.best.state
+2023-11-17 20:22:35,348 INFO     pid:26908 __main__:521:saveModel SHA1: 1db51586876261f9c6e0725fb7c3b99e48697b6d
